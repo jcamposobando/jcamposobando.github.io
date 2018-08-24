@@ -58,3 +58,45 @@ header {
 p{
 	color: black;
 }
+
+form{
+	color: black;
+	input {
+		border: none;
+		border-bottom: 2px solid #000;
+		font: inherit;
+		width: auto;
+	}
+	
+	textarea{
+		overflow: auto;
+		border: none;
+		border-bottom: 2px solid #000;
+		font: inherit;
+		width: auto;
+	}
+}
+
+button{
+	background: none;
+	border: 2px solid #000;
+	font: inherit;
+}
+
+button:hover{
+	background: black;
+	color: white;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}

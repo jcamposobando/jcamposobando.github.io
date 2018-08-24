@@ -2,13 +2,44 @@
 layout: default
 ---
 
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
+
 <h1>{{ page.title }}</h1>
-
-<p class="view">by {{ page.author | default: site.author }}</p>
-
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
 {% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+
+<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
 
 {{content}}
+
+<h2>Leave a comment</h2>
+
+<form method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master">
+	<input name="options[redirect]" type="hidden" value="https://my-site.com">
+	<!-- e.g. "2016-01-02-this-is-a-post" -->
+	<input name="options[slug]" type="hidden" value="{{ page.slug }}">
+	<input name="fields[url]" type="hidden" value="{{ page.url }}">
+	<input name="fields[name]" type="text" placeholder="Name"><br>
+	<input name="fields[email]" type="email" placeholder="Email"><br>
+	<textarea name="fields[message]" placeholder="Comment"></textarea><br>  
+	<button type="submit">Comment!</button>
+</form>
+
+<script>
+	var textarea = document.querySelector('textarea');
+
+	textarea.addEventListener('keydown', autosize);
+			 
+	function autosize(){
+		var el = this;
+		setTimeout(function(){
+		el.style.cssText = 'height:auto; padding:0';
+		// for box-sizing other than "content-box" use:
+		// el.style.cssText = '-moz-box-sizing:content-box';
+		el.style.cssText = 'height:' + el.scrollHeight + 'px';
+		},0);
+	}
+	  
+</script>
+
+
