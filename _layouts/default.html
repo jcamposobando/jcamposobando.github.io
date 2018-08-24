@@ -48,10 +48,13 @@
   <input name="options[redirect]" type="hidden" value="https://my-site.com">
   <!-- e.g. "2016-01-02-this-is-a-post" -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-  <label><input name="fields[name]" type="text">Name</label>
-  <label><input name="fields[email]" type="email">E-mail</label>
-  <label><textarea name="fields[message]"></textarea>Message</label>
-  
+  <input name="fields[url]" type="hidden" value="{{ page.url }}">
+  <label>Name</label>
+  <input name="fields[name]" type="text"><br>
+  <label>E-mail</label>
+  <input name="fields[email]" type="email"><br>
+  <label>Message</label>
+  <textarea name="fields[message]"></textarea><br>  
   <button type="submit">Go!</button>
 </form>
 
