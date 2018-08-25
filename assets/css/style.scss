@@ -7,10 +7,21 @@
     width: auto;
 }
 
+h3{	
+	font-size: 0.83em;
+	color: inherit;
+}
+
+small{
+	font-size: 0.83em;
+	font-family: "Space Mono", monospace ;
+}
+
 section {
 	margin: auto;
 	padding-left: 350px;
 	float: none !important ;
+	border: none;
 }
 
 @media  (max-width: 960px) {
@@ -24,8 +35,16 @@ header {
 }
 }
 
+
+@media  (max-width: 375px) {
+	form{
+			width: auto;
+	}
+}
 body {
 	font: 18px/1.5 "Spectral", sans-serif;
+
+	color: black;
 }
 
 h1,h2,h3,h4,h5,h6,code{
@@ -74,7 +93,7 @@ form{
 		border: none;
 		border-bottom: 2px solid #000;
 		font: inherit;
-		width: inherit;
+		width: 297px;
 	}
 }
 
@@ -122,4 +141,18 @@ button:hover{
     opacity: 1;
     height: 75px;
   }
+}
+
+.comment {
+	margin-bottom: 1em;
+	h3 {
+		margin: 0px;
+	}
+	p{
+		margin: 0px;
+	}
+}
+
+footer{
+	padding-top: 2em;
 }

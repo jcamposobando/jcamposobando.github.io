@@ -4,32 +4,34 @@ layout: default
 
 
 <h1>{{ page.title }}</h1>
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-{% if page.tags %}
 
-<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% if page.tags %}
+<small>
+{% for tag in page.tags %}
+	<a href="/tags/{{tag}}">{{tag}}</a> 
+{% endfor %}
+</small> <br>
 {% endif %}
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
 
 {{content}}
 
-{% assign comments = site.data.comments %}
-{% assign commentsCount = comments | size %}
+{% if site.data.comments[page.slug] %}
 
-{% if reviewCount > 0 %}
-	<h2>Comments</h2>
-	<ul>
-	  {% for comment in comments %}
-	  <li>
-		<p><b>{{ comment.name }}</b>
-		<i>{{ comment.date | date: '%B %d, %Y' }}</i></p>
-		<p>
-		  {{comment.message}}
-		</p>
-	  </li>
-	  {% endfor %}
-	</ul>
+  <h2>Comments:</h2>
+
+  {% assign comments = site.data.comments[page.slug] | sort %}
+
+  {% for comment in comments %}
+  <div class=comment>
+    <h3>{{ comment[1].name }} // {{ comment[1].date | date: "%b %d, %Y" }}</h3>
+    <p>{{ comment[1].message | markdownify }}</p>
+  </div>
+  {% endfor %}
 {% endif %}
-<h2>Leave a comment</h2>
+
+<h2>Leave a comment:</h2>
 
 <form class="commentForm" method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments">
 	<!-- e.g. "2016-01-02-this-is-a-post" -->
