@@ -61,11 +61,12 @@ p{
 
 form{
 	color: black;
+	width: 300px;
 	input {
 		border: none;
 		border-bottom: 2px solid #000;
 		font: inherit;
-		width: auto;
+		width: inherit;
 	}
 	
 	textarea{
@@ -73,7 +74,7 @@ form{
 		border: none;
 		border-bottom: 2px solid #000;
 		font: inherit;
-		width: auto;
+		width: inherit;
 	}
 }
 
@@ -99,4 +100,26 @@ button:hover{
 
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: black;
+}
+
+.g-recaptcha {
+	padding-bottom: 10px;
+	animation: 1s fadeIn;
+  	animation-fill-mode: forwards;
+  	animation-timing-function: ease-in-out;
+	display: none;
+	visibility: hidden ;
+	height: 0px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+  	visibility: visible;
+    opacity: 1;
+    height: 75px;
+  }
 }

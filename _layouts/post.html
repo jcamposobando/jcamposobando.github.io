@@ -12,19 +12,39 @@ layout: default
 
 {{content}}
 
+{% assign comments = site.data.comments %}
+{% assign commentsCount = comments | size %}
+
+{% if reviewCount > 0 %}
+	<h2>Comments</h2>
+	<ul>
+	  {% for comment in comments %}
+	  <li>
+		<p><b>{{ comment.name }}</b>
+		<i>{{ comment.date | date: '%B %d, %Y' }}</i></p>
+		<p>
+		  {{comment.message}}
+		</p>
+	  </li>
+	  {% endfor %}
+	</ul>
+{% endif %}
 <h2>Leave a comment</h2>
 
-<form method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments">
+<form class="commentForm" method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments">
 	<!-- e.g. "2016-01-02-this-is-a-post" -->
 	<input name="options[slug]" type="hidden" value="{{ page.slug }}">
+	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
+	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
+	
 	<input name="fields[name]" type="text" placeholder="Name"><br>
 	<input name="fields[email]" type="email" placeholder="Email"><br>
 	<textarea name="fields[message]" placeholder="Comment"></textarea><br>  
+	
+	<div class="g-recaptcha" data-sitekey="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4"></div>
+	
 	<button type="submit">Comment!</button>
 	
-	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
-	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
-	<div class="g-recaptcha" data-sitekey="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4"></div>
 
 </form>
 
@@ -40,7 +60,13 @@ layout: default
 		el.style.cssText = 'height:' + el.scrollHeight + 'px';
 		},0);
 	}
-	  
+	
+	var grecaptcha = document.querySelector('.g-recaptcha');
+	document.querySelector('.commentForm').addEventListener('focusin',showRecaptcha);
+	function showRecaptcha () {
+		grecaptcha.style.display = "block";
+		grecaptcha.style.visibility = "visible";
+	}
 </script>
 
 
