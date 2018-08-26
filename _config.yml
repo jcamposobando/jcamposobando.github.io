@@ -9,13 +9,10 @@ baseurl: ""
 sass:
   style: compressed
 
+permalink: /:title
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  
-permalink: /:title
-
-footer-links:
-  github: barryclark/jekyll-now
-  rss: /feed.xml
+  - jekyll-sitemap
 
