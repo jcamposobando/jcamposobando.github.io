@@ -24,6 +24,15 @@ section {
 	border: none;
 }
 
+@media (min-width: 960px){
+	body{
+		padding: 50px 50px 20px 50px;
+	}
+	section{
+		padding-bottom: 0px;
+	}
+}
+
 @media  (max-width: 960px) {
 section {
     padding: 0px;
@@ -155,4 +164,14 @@ button:hover{
 
 footer{
 	padding-top: 2em;
+	p {
+		margin: 0px;
+	}
 }
+
+article {
+	margin-bottom: 2em;
+}
+
+@import "svg-icons";
+
