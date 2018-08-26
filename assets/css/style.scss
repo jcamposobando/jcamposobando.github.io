@@ -3,13 +3,8 @@
 
 @import "jekyll-theme-minimal";
 
-.wrapper {
-    width: auto;
-}
-
 h3{	
 	font-size: 0.83em;
-	color: inherit;
 }
 
 small{
@@ -31,34 +26,72 @@ section {
 	section{
 		padding-bottom: 0px;
 	}
+	
+	header{
+		flex-direction: column;
+	}
+}
+
+.spacer{
+	height:1em;
 }
 
 @media  (max-width: 960px) {
-section {
-    padding: 0px;
-}
-header {
-	border-right: 0px solid #000 !important;
-	border-bottom: 2px solid #000 !important;
-	padding: 0;
-}
-}
+	section {
+		padding: 0px;
+	}
+	header {
+		border-right: 0px solid #000 !important;
+		border-bottom: 2px solid #000 !important;
+		margin-bottom: 2em;
+		padding: 0px !important;
+		flex-direction: row;
+	}
+	
+	header::after {
+    	content: "";
+    	clear: both;
+    	display: table;
+	}
 
-
-@media  (max-width: 375px) {
-	form{
-			width: auto;
+	.hs1{
+		flex-grow: 1;
+		flex-basis: 50%;
+		padding-right:1em;
+		border-right: 2px solid #000;
+	}
+	.hs2{		
+	    flex-grow: 1;
+	    padding-left :1em;
+		flex-basis: 50%;
+		height:inherit;
 	}
 }
+
+
+@media print, screen and (max-width: 480px) {
+	header{
+		flex-direction: column;
+	}
+  .hs1{
+		width:100%;
+		padding-right:0px;
+		border-right: none;
+	}
+	.hs2{
+		padding:0px;
+		height:100%;
+		width:100%;
+	}
+}
+
+
 body {
 	font: 18px/1.5 "Spectral", sans-serif;
-
-	color: black;
 }
 
 h1,h2,h3,h4,h5,h6,code{
 	font-family: 'Space Mono', monospace;
-	color: black;
 }
 
 code{
@@ -81,14 +114,10 @@ header {
 	border-right: 2px solid #000;
 	border-bottom: 0px solid #000;
 	padding-right: 15px;
-}
-
-p{
-	color: black;
+	display: flex;
 }
 
 form{
-	color: black;
 	width: 300px;
 	input {
 		border: none;
