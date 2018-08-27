@@ -1,13 +1,14 @@
-@import "fonts";
 @import "rouge-github";
 
 body {
-  background-color: #fff;
+  background-color: white;
   padding:50px;
+  font: 18px/1.5 "Spectral", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin:0 0 20px;
+  font-family: 'Space Mono', monospace;
 }
 
 p, ul, ol, table, pre, dl {
@@ -22,16 +23,12 @@ h1 {
   font-size:28px;
 }
 
-h3, h4, h5, h6 {
-  color:black;
-}
-
 a {
-  text-decoration:none;
+  text-decoration: underline;
+  color: black;
 }
 
 a:hover, a:focus {
-  color:black;
   font-weight: bold;
 }
 
@@ -88,6 +85,9 @@ header {
   width:270px;
   float:left;
   position:fixed;
+	border-right: 2px solid #000;
+	padding-right: 15px;
+	display: flex;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
