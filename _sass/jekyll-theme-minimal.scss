@@ -98,12 +98,16 @@ strong {
 
 section {
   width:500px;
-  float:right;
+  float:none;
   padding-bottom:50px;
+  margin: auto;
+	padding-left: 350px;
+	border: none;
 }
 
 small {
-  font-size:11px;
+	font-size: 0.83em;
+	font-family: "Space Mono", monospace ;
 }
 
 hr {
@@ -114,6 +118,7 @@ hr {
 }
 
 footer {
+	padding-top: 2em;
   width:270px;
   float:left;
   position:fixed;
