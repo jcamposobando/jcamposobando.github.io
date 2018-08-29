@@ -1,4 +1,4 @@
 ---
 layout: tagpage
-title: markdown
+title: yml
 ---
