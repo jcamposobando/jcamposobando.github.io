@@ -20,7 +20,7 @@ tags.map(&:downcase).uniq.each do |tag|
 ---
 layout: tagpage
 title: #{tag}
-permalink: /tags/#{tag}
+permalink: /tags/#{tag}/
 ---
 	EOF
 end
