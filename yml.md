@@ -1,5 +1,5 @@
 ---
 layout: tagpage
 title: yml
-permalink: /tags/yml
+permalink: /tags/yml/
 ---
