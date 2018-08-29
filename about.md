@@ -26,4 +26,4 @@ This site is hosted on [GitHub Pages](https://pages.github.com/). It is based on
 
 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="jcamposobando"><a class="LI-simple-link" href='https://cr.linkedin.com/in/jcamposobando?trk=profile-badge'>Juan Campos-Obando</a></div>
 
-<script type="text/javascript" src="http://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
