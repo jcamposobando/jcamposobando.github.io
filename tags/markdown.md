@@ -1,5 +1,5 @@
 ---
 layout: tagpage
 title: markdown
-permalink: /tags/markdown
+permalink: /tags/markdown/
 ---
