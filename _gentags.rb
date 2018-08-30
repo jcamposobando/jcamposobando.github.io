@@ -16,7 +16,7 @@ dd.each do |file|
 end
 
 tags.map(&:downcase).uniq.each do |tag|
-	File.write "#{tag}.md" , <<-EOF
+	File.write "tags/#{tag}.md" , <<-EOF
 ---
 layout: tagpage
 title: #{tag}
