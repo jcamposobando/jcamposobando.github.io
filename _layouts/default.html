@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
@@ -5,16 +9,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-  <link href="https://unpkg.com/ionicons@4.4.1/dist/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono:700|Spectral:300" rel="stylesheet">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon"/>
+  <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon"/>
   <!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
   <meta name="google-site-verification" content="PWohanVbR5rtLT0LKPez_d0tkRAnWEg2IlO30bKeTfE" />
   {% seo %}
+  {% capture styles %}
+  {% include style.scss %}
+  {% endcapture %}
+  <style>
+    {{ styles | scssify }}
+  </style>
 </head>
 <body>
   <div class="wrapper">
@@ -37,11 +44,10 @@
       {% assign tags = site.tags | sort %}
       {% for tag in tags %}
           <a href="/tags/{{ tag | first | slugify }}/">{{ tag | first | slugify }}</a>&ensp;
-      {% endfor %}
-      <div class=spacer></div>
-      <a href="https://www.linkedin.com/in/jcamposobando"><i class="icon ion-logo-linkedin"></i></a>&ensp;
-      <a href="/feed.xml"><i class="icon ion-logo-rss"></i></a>&ensp;
-      <a href="https://github.com/jcamposobando/"><i class="icon ion-logo-github"></i></a>
+      {% endfor %}<br><br>
+      <a class=icon href="https://www.linkedin.com/in/jcamposobando">{% include logo-linkedin.svg %}</a>
+      <a class=icon href="/feed.xml">{% include logo-rss.svg %}</a>
+      <a class=icon href="https://github.com/jcamposobando/">{% include logo-github.svg %}</a>
 	</div>
 	
     </header>

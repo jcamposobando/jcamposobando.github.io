@@ -1,7 +1,5 @@
----
----
-
 @import "jekyll-theme-minimal";
+@import "fonts";
 
 h3{	
 	font-size: 0.83em;
@@ -165,9 +163,12 @@ margin: 0px;
 
 article {
 	margin-bottom: 2em;
+	border:  none;
 }
 
 .icon{
-	font-size: 1.5em;
+	text-decoration: none;
+	color:black;
+	margin: 1em 0.3em 0em 0em;
 }
 
