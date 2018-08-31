@@ -26,7 +26,7 @@ layout: default
   {% for comment in comments %}
   <div class=comment>
     <h3>{{ comment[1].name }} // {{ comment[1].date | date: "%b %d, %Y" }}</h3>
-    <p>{{ comment[1].message | markdownify }}</p>
+    {{ comment[1].message | markdownify }}
   </div>
   {% endfor %}
 {% endif %}
@@ -39,9 +39,9 @@ layout: default
 	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
 	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
 	
-	<input name="fields[name]" type="text" placeholder="Name"><br>
-	<input name="fields[email]" type="email" placeholder="Email"><br>
-	<textarea name="fields[message]" placeholder="Comment"></textarea><br>  
+	<input title="Name" name="fields[name]" type="text" placeholder="Name"><br>
+	<input title="Email" name="fields[email]" type="email" placeholder="Email"><br>
+	<textarea title="Comment (markdown enabled!)" name="fields[message]" placeholder="Comment (markdown enabled!)"></textarea><br>  
 	
 	<div class="g-recaptcha" data-sitekey="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4"></div>
 	
