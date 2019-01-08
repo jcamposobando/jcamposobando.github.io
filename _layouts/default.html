@@ -16,9 +16,15 @@ layout: compress
   <![endif]-->
   <meta name="google-site-verification" content="PWohanVbR5rtLT0LKPez_d0tkRAnWEg2IlO30bKeTfE" />
   {% seo %}
+  
   {% capture styles %}
+  
   {% include style.scss %}
+  {% if page.gist %}
+  {% include gist.scss %}  
+  {% endif %}
   {% endcapture %}
+  
   <style>
     {{ styles | scssify }}
   </style>
