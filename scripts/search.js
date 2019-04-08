@@ -55,11 +55,13 @@ function initSearch() {
     }
 
     // Get search results on submission of form
+   /*
     $(document).on("submit", $searchForm, function(e) {
         e.preventDefault();
         q = $searchInput.val();
         execSearch(q);
     });
+    */
 }
 
 

@@ -101,6 +101,7 @@ button{
 	background: none;
 	border: 2px solid #000;
 	font: inherit;
+	color:black;
 }
 
 button:hover{
@@ -168,6 +169,14 @@ article {
 	margin: 1em 0.3em 0em 0em;
 }
 
+input{
+	background:white;
+}
+
+textarea{
+	background:white;
+}
+
 .search-form{
   	display: inline-flex;
 	width: 100%;
@@ -176,7 +185,7 @@ article {
   		border-width: 2px 0px 2px 2px;
   		padding-left: 4px;
 		font: inherit;
-		width: inherit;
+		width: 100%;
 	}
 }
 
