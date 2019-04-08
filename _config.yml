@@ -5,6 +5,7 @@ show_downloads: false
 google_analytics: UA-124636489-1 
 theme: jekyll-theme-minimal
 baseurl: ""
+JEKYLL_GITHUB_TOKEN: 08543d51ddd6fceb3a075fc8a98de046605c1714
 
 sass:
   style: compressed
@@ -15,6 +16,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-gist
   
 compress_html:
   clippings: all

@@ -22,7 +22,7 @@ Originally the length was also variable, but I liked it better when it was const
 
 Using Processing's tweak mode was incredibly helpful as it made possible to see how changing the parameters affected the results on the fly instead of having to run the sketch again.
 
-<script src="https://gist.github.com/jcamposobando/2937fb8d0b8848b093c58d2ac04806d8.js"></script>
+{% gist 2937fb8d0b8848b093c58d2ac04806d8 %}
 
 The font is [Space Mono](https://fonts.google.com/specimen/Space+Mono), which is the same font used for accent on this website.
 

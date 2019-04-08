@@ -20,6 +20,7 @@ tags.map(&:downcase).uniq.each do |tag|
 ---
 layout: tagpage
 title: #{tag}
+search_omit: true
 permalink: /tags/#{tag}/
 ---
 	EOF
