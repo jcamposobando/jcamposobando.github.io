@@ -2,6 +2,7 @@
 layout: page
 title: About me
 permalink: /about/
+search_omit: true
 ---
 
 I'm a computer science student at [University of Costa Rica](https://www.ucr.ac.cr/).
