@@ -8,17 +8,17 @@ excerpt_separator: <!--more-->
 
 There's a space in my room where I wanted to put a calendar in, so I created one that just fitted in. I also wanted a calendar in which every day is displayed continuously, so each column represents a day of the week (starting on Monday) and each row is a week.
 
-[ ![_config.yml]({{ site.baseurl }}/images/calendar/g14.png)]({{ site.baseurl }}/images/calendar/3907.pdf)
+[ ![_config.yml]({{ site.baseurl }}/images/calendar/g14.webp)]({{ site.baseurl }}/images/calendar/3907.pdf)
 
 <!--more-->
 
 For it, I wanted a pattern that looked simple. I chose a pattern of lines of varying angle and width. In order to make the variations look "rhythmic", I used the Perlin noise function provided by Processing. That means that different seeds for the noise create different patterns.
 
-[ ![_config.yml]({{ site.baseurl }}/images/calendar/0085.png)]({{ site.baseurl }}/images/calendar/0085.pdf)
+[ ![_config.yml]({{ site.baseurl }}/images/calendar/0085.webp)]({{ site.baseurl }}/images/calendar/0085.pdf)
 
 Originally the length was also variable, but I liked it better when it was constant. I also tried some variants where the width of the lines was bigger so they contained the numbers. It looked like a sea of [meneitos](https://www.google.com/search?q=meneitos&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjnjcWixOLfAhUBJt8KHexKAVcQ_AUIDigB&biw=1366&bih=677) though.
 
-[ ![ _config.yml]({{ site.baseurl }}/images/calendar/19427.png)]({{ site.baseurl }}/images/calendar/19427.pdf)
+[ ![ _config.yml]({{ site.baseurl }}/images/calendar/19427.webp)]({{ site.baseurl }}/images/calendar/19427.pdf)
 
 Using Processing's tweak mode was incredibly helpful as it made possible to see how changing the parameters affected the results on the fly instead of having to run the sketch again.
 
