@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Waves
+title: Lisp Cheat Sheet
 tags: lisp
 excerpt_separator: <!--more-->
 ---
 
-
+A simple Lisp Cheat Sheet
 
 <!--more-->
 
