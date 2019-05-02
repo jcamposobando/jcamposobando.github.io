@@ -72,10 +72,11 @@ h3{
 
 
 pre.highlight{
-    background-color: #ffffff;
+    background-color: transparent;
     border-radius: 0px;
-    border:1px solid #000;
+    border:2px solid black;
     padding: 6px 9px;
+	font-size: 14px;
 }
 
 .commentForm{
@@ -187,5 +188,9 @@ textarea{
 		font: inherit;
 		width: 100%;
 	}
+}
+
+p code {
+	font-size: 14px;
 }
 
