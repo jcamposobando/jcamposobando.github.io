@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lisp in Small Parts (Solutions)
-tags: Lisp 
+tags: lisp 
 excerpt_separator: <!--more-->
 ---
 I'm learning lisp with several tutorials. These are the solutions to some of the exercises proposed on [Lisp in Small Parts](http://lisp.plasticki.com/show?14F). I am learning, so these are not necessarily good or efficient solutions. If you have a suggestion please leave it in the comments =D
