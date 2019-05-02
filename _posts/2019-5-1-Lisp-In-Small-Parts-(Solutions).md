@@ -9,9 +9,9 @@ I'm learning lisp with several tutorials. These are the solutions to some of the
 If you need a quick and simple way to test them, the best I found is this [online lisp interpreter by TutorialsPoint](https://www.tutorialspoint.com/execute_lisp_online.php).
 <!--more-->
 
-##[Manipulating Lists](http://lisp.plasticki.com/show?2EE)
+## [Manipulating Lists](http://lisp.plasticki.com/show?2EE)
 
-###Swaping the first two elements of a list
+### Swaping the first two elements of a list
 It stores the first element of the list in `a`. Then, it stores the first element of the rest of the list in `b`. Then it stores the `rest` of the `rest` of the list in `c`
 Finally, it `cons` all the parts in the correct order.
 ```
@@ -23,7 +23,7 @@ Finally, it `cons` all the parts in the correct order.
     ) (cons b (cons a c))))
 ```
 
-###Duplicate the first item in a list
+### Duplicate the first item in a list
 It stores the first element of the list in `a`, then it attaches it to the front of the list.
 ```
 (defun dup (lst)
@@ -31,14 +31,14 @@ It stores the first element of the list in `a`, then it attaches it to the front
     (cons a lst)))
 ```
 
-###Return a random item from a list
+### Return a random item from a list
 First, it stores the `length` of the list in a local variable `ln`. Then it generates a `random` number between 0 and `ln`. Finally, it takes the `nth` element, where the `n` is the randomly generated number.
 ```
 (defun random-elt (lst)
     (let* ( (ln (length lst)))
     (nth (random ln) lst)))
 ```
-###Return the last item in a list
+### Return the last item in a list
 First, it stores the `length` of the list in a local variable `ln`, then it takes the element in the position ln - 1. (There must be a more efficient way of doing it using recursion)
 ```
 (defun last-elt (lst)
@@ -46,9 +46,9 @@ First, it stores the `length` of the list in a local variable `ln`, then it take
     (nth (- 1 ln) lst)))
 ```
 
-##[Strings](http://lisp.plasticki.com/show?HL)
+## [Strings](http://lisp.plasticki.com/show?HL)
 
-###Reverse the middle letters of a word
+### Reverse the middle letters of a word
 Keeps the first and the last letter of the word in place and reverses the rest.
 (midverse "retinues") => "reunites"
 
