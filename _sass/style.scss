@@ -9,9 +9,6 @@ h3{
 	body{
 		padding: 50px 50px 20px 50px;
 	}
-	section{
-		padding-bottom: 0px;
-	}
 	
 	header{
 		flex-direction: column;
@@ -22,10 +19,12 @@ h3{
 	height:1em;
 }
 
+@media (max-height: 960px){
+	
+}
+
 @media  (max-width: 960px) {
-	section {
-		padding: 0px;
-	}
+
 	header {
 		border-right: 0px solid #000 !important;
 		border-bottom: 2px solid #000 !important;
