@@ -26,15 +26,18 @@ Lists in lisp are recursively defined single linked lists. That means that a lis
 `(reverse '(1 2 3 4))`        |reverses a list, \[4,3,2,1\]
 
 ## Functions
+
 `(defun sum (a b) (+ a b))` |Defines a function that takes two arguments `a` and `b`, and returns the sum of them
 `(defun dice () (+ 1 (random 6)))` |A function that takes no arguments
 
 ## Variables
+
 `(defparameter foo 1)`         |Global variable named foo whose value is 1
 `(setf foo 2)`                |Sets the value of foo to 2
 `(let* ((var 5)) body)`        |Local variable called var, valued 5, when `body` is evaluated. 
 
 ## Strings
+
 `""`                        |Empty string
 `"Hello World!"`            |A string that says "Hello World!"
 `"this is a double quote \""` |Double quotes can be scaped inside a string
