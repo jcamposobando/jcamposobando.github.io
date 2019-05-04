@@ -45,6 +45,7 @@ blockquote {
 code, pre {
   font-family: Space Mono, Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
+  font-size: 15px;
 }
 
 pre {
@@ -58,6 +59,7 @@ pre {
 table {
   width:100%;
   border-collapse:collapse;
+  table-layout: fixed;
 }
 
 th, td {

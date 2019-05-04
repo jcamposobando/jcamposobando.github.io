@@ -35,15 +35,14 @@ layout: default
 
 <h2>Leave a comment:</h2>
 
-<form class="commentForm" method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments">
-	<!-- e.g. "2016-01-02-this-is-a-post" -->
-	<input name="options[slug]" type="hidden" value="{{ page.slug }}">
+<form class="commentForm" onsubmit="return onComment()">
+	<input type="hidden" name="options[slug]" value="{{ page.slug }}">
 	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
 	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
 	
-	<input title="Name" name="fields[name]" type="text" placeholder="Name"><br>
-	<input title="Email" name="fields[email]" type="email" placeholder="Email"><br>
-	<textarea title="Comment (markdown enabled!)" name="fields[message]" placeholder="Comment (markdown enabled!)"></textarea><br>  
+	<input title="Name" id="Name" name="fields[name]" type="text" placeholder="Name"><br>
+	<input title="Email" id="Email" name="fields[email]" type="email" placeholder="Email"><br>
+	<textarea title="Comment (markdown enabled!)" id="Comment" name="fields[message]" placeholder="Comment (markdown enabled!)"></textarea><br>  
 	
 	<div class="g-recaptcha" data-sitekey="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4"></div>
 	
@@ -71,6 +70,31 @@ layout: default
 		grecaptcha.style.display = "block";
 		grecaptcha.style.visibility = "visible";
 	}
+	
+	function onComment () {
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', "https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments", true);
+		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		xhr.send("Name=" + document.getElementById("Name").value +"&Email="+ document.getElementById("Email").value +"&Comment="+ document.getElementById("Comment").value);
+		xhr.onreadystatechange = processRequest;
+		return false;
+		}
+	
+	function processRequest(e) {
+		    if (xhr.readyState == 1){
+		    	alert("1"+e);	
+		    }
+		    if (xhr.readyState == 2){
+		    	alert("2"+e);	
+		    }
+		    if (xhr.readyState == 3){
+		    	alert("3"+e);	
+		    }
+		    if (xhr.readyState == 4 && xhr.status == 200) {
+		    	alert("4" + e);
+    		}
+	}
+}
 </script>
 
 
