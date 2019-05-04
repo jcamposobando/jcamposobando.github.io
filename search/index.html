@@ -8,7 +8,7 @@ search_omit: true
   
   <!-- Search form -->
   <form id=topForm class=search-form method="get" action="/search" formenctype="text/plain">
-    <input type="search" name="q" id="q" placeholder="Enter search term"/>
+  <input type="search" name="q" id="q2" placeholder="Enter search term"/>
 	<button form=topForm type="submit" value="Search">Search</button>
   </form>
 
@@ -22,16 +22,30 @@ search_omit: true
 
   <!-- Search result template -->
   <script type="text/x-template" id="search-result">
-    <div>
+    <article class="post">
       <h1><a href="##Url##">##Title##</a></h1>
       <small>##Date##</small>
+    <div class="entry">	
       <p>##Excerpt##<p>
       <a href="##Url##">Read &ldquo;##Title##&rdquo;</a>
     </div>
+    </article>
+    <br>
+    <br>
   </script>
+
+	<script>
+		window.onload = function() {
+  		var urlParams = new URLSearchParams(window.location.search);
+  		var query = urlParams.get("q");
+  		if ( query != "" && query != undefined ) {
+  			document.getElementById('q2').value = query ;
+			};
+		};
+	</script>
 
   <!-- jQuery - required but can be moved to the <head> -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
   <!-- Search script - Must appear after template -->
-  <script src="/scripts/search.js"></script>
+  <script src="/search/search.js"></script>
