@@ -35,7 +35,7 @@ layout: default
 
 <h2>Leave a comment:</h2>
 
-<form class="commentForm" onsubmit="return onComment()">
+<form class="commentForm" onsubmit="event.preventDefault(); onComment()">
 	<input type="hidden" name="options[slug]" value="{{ page.slug }}">
 	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
 	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
