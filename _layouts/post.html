@@ -46,7 +46,7 @@ layout: default
 	
 	<div class="g-recaptcha" data-sitekey="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4"></div>
 	
-	<button type="submit">Comment!</button>
+	<button type="submit">Comment!</button><p id="answer"><p>
 	
 
 </form>
@@ -75,26 +75,21 @@ layout: default
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', "https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments", true);
 		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		xhr.send("Name=" + document.getElementById("Name").value +"&Email="+ document.getElementById("Email").value +"&Comment="+ document.getElementById("Comment").value);
-		xhr.onreadystatechange = processRequest;
+		xhr.send("options[slug]={{ page.slug }}&options[reCaptcha][siteKey]=6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4&options[reCaptcha][secret]=\"cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=\"&fields[name]=" + document.getElementById("Name").value +"&fields[email]="+ document.getElementById("Email").value +"&fields[message]="+ document.getElementById("Comment").value);
+		xhr.onreadystatechange = function (e) {
+		    if (xhr.readyState == 4) {
+		    	if (xhr.status == 200){
+		    		document.getElementById("answer").innerHTML = "Succes! Your comment will be live in a short while.";
+		    		alert("4" + e);
+		    	} else {
+		    		document.getElementById("answer").innerHTML = "Bummer! Something went wrong. Please try again later.";
+		    	}
+    		}
+		};
 		return false;
 		}
 	
-	function processRequest(e) {
-		    if (xhr.readyState == 1){
-		    	alert("1"+e);	
-		    }
-		    if (xhr.readyState == 2){
-		    	alert("2"+e);	
-		    }
-		    if (xhr.readyState == 3){
-		    	alert("3"+e);	
-		    }
-		    if (xhr.readyState == 4 && xhr.status == 200) {
-		    	alert("4" + e);
-    		}
-	}
-}
+
 </script>
 
 
