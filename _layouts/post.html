@@ -35,11 +35,11 @@ layout: default
 
 <h2>Leave a comment:</h2>
 
-<form class="commentForm" onsubmit="event.preventDefault(); onComment()">
+<form class="commentForm" method="POST" action="https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments">
 	<input type="hidden" name="options[slug]" value="{{ page.slug }}">
 	<input type="hidden" name="options[reCaptcha][siteKey]" value="6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4">
 	<input type="hidden" name="options[reCaptcha][secret]" value="cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=">
-	
+	<input type="hidden" name="options[redirect]" value="https://jcamposobando.com/Thanks">
 	<input title="Name" id="Name" name="fields[name]" type="text" placeholder="Name"><br>
 	<input title="Email" id="Email" name="fields[email]" type="email" placeholder="Email"><br>
 	<textarea title="Comment (markdown enabled!)" id="Comment" name="fields[message]" placeholder="Comment (markdown enabled!)"></textarea><br>  
@@ -70,25 +70,6 @@ layout: default
 		grecaptcha.style.display = "block";
 		grecaptcha.style.visibility = "visible";
 	}
-	
-	function onComment () {
-		var xhr = new XMLHttpRequest();
-		xhr.open('POST', "https://api.staticman.net/v2/entry/jcamposobando/jcamposobando.github.io/master/comments", true);
-		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		xhr.send("options[slug]={{ page.slug }}&options[reCaptcha][siteKey]=6LejVGwUAAAAACdZl9CTexZUY29r8Vt5BAPX7rm4&options[reCaptcha][secret]=\"cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E=\"&fields[name]=" + document.getElementById("Name").value +"&fields[email]="+ document.getElementById("Email").value +"&fields[message]="+ document.getElementById("Comment").value);
-		xhr.onreadystatechange = function (e) {
-		    if (xhr.readyState == 4) {
-		    	if (xhr.status == 200){
-		    		document.getElementById("answer").innerHTML = "Succes! Your comment will be live in a short while.";
-		    		alert("4" + e);
-		    	} else {
-		    		document.getElementById("answer").innerHTML = "Bummer! Something went wrong. Please try again later.";
-		    	}
-    		}
-		};
-		return false;
-		}
-	
 
 </script>
 
