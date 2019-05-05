@@ -8,6 +8,10 @@ comments:
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
   allowedFields: ["name", "email", "url", "message"]
+  
+  # When allowedOrigins is defined, only requests sent from one of the domains
+  # listed will be accepted.
+  allowedOrigins: ["jcamposobando.com" ,  "localhost"] # TODO: Add your domains
 
   # (*) REQUIRED
   #
@@ -55,12 +59,14 @@ comments:
     # (!) ENCRYPTED
     #
     # Mailgun API key
-    apiKey: "1q2w3e4r"
+    apiKey: "wUUt4A8E75YP3FN+0Gm2Z7s6Z/gVoxwrbG4RDGDhWPaCIblV9PdJtnctHbg5iZoMDONnoDjjYfB5BarSBPI+vBkULYUtoAoUatnkEplaDHXMqz12JACao0PRzmtj0kWqrFKIhD6yN8JEm1DX+kJ+rAJZ3b/t1IWF0f+hHOlxenQ="
 
     # (!) ENCRYPTED
     #
     # Mailgun domain (encrypted)
-    domain: "4r3e2w1q"
+    domain: "HAKb2P4tBhLzFXBzigqb+WkXrGUaJiGeZS2dh7akwzTy9HLzIpH2eS81J4Ocp0yOu1RmCfoKqhdkwBWgWLmqNm9+Dq4nDAuSx/Bb56tfyx0lnpgbmCnZqdwfBlJxCzFXDsA6dPNbhpXj44slpI4dJ3YlgFZx2jFvpLgn+eW6RT0="
+    
+    fromAddress: "blog@jcamposobando.com"
 
   # (*) REQUIRED
   #
@@ -82,7 +88,7 @@ comments:
     secret: "cTKni5kFcRNU3T1jmokH80gENEGvybsO9wpuvN/naXbOD/lJoO74mL0bazjz/OYjRereTD4RxYxYVpKBO9dBWU6nNUgIwYp0JLpu1tvNebQjrxBc/fOgZfSjSOzjjI/ZmRIMK2PNzjoZjY49woeatSjqFvNf+D+gpdxlOShpE1E="
     
   akismet:
-    enable: true
+    enable: false
     author: name
     authorEmail: email
     content: message    
